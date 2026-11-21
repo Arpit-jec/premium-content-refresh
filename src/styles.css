@@ -410,6 +410,11 @@
     pointer-events: none;
   }
 
+  .dress-row + .dress-row { border-top: 1px solid color-mix(in oklab, var(--gold) 30%, transparent); }
+  .dress-swatch {
+    box-shadow: 0 0 0 2px var(--card), 0 0 0 3px color-mix(in oklab, var(--gold) 55%, transparent), var(--shadow-card);
+  }
+
   .gem-rule { display: flex; align-items: center; justify-content: center; gap: 0.6rem; }
   .gem-rule > span {
     height: 1px;

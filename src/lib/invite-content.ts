@@ -35,7 +35,7 @@ export const EVENTS: WeddingEvent[] = [
     name: { en: "Mandap", hi: "मंडप" },
     date: "2026-12-02",
     time: null,
-    place: atVenue,
+    place: { en: "At our residence", hi: "निवास स्थान पर" },
     dayLabel: { en: "Wednesday, 2 December", hi: "बुधवार, 2 दिसंबर" },
   },
   {
@@ -124,7 +124,7 @@ export function calendarUrl(e: WeddingEvent, lang: Lang): string {
     action: "TEMPLATE",
     text: title,
     dates,
-    location: e.id === "matapujan" ? FROM.address.en : `${VENUE.name.en}, ${VENUE.address.en}`,
+    location: e.id === "matapujan" || e.id === "mandap" ? FROM.address.en : `${VENUE.name.en}, ${VENUE.address.en}`,
     ctz: "Asia/Kolkata",
   });
   return `https://calendar.google.com/calendar/render?${params.toString()}`;
@@ -153,11 +153,11 @@ export const COUPLE = {
 export const FROM = {
   name: { en: "Nirmal Patariya", hi: "निर्मल पटारिया" },
   address: {
-    en: "Rampur, Purana Sai Mandir, Starbudes ke Peeche, Jabalpur (M.P.)",
-    hi: "रामपुर, पुराना साईं मंदिर, स्टारबडेस के पीछे, जबलपुर (म.प्र.)",
+    en: "Rampur, Purana Sai Mandir, Behind Starbucks, Jabalpur (M.P.)",
+    hi: "रामपुर, पुराना साईं मंदिर, स्टारबक्स के पीछे, जबलपुर (म.प्र.)",
   },
   phones: ["7770904258", "8319908973"],
-  firms: { en: "Patariya Market  |  Infinity Pvt. Ltd.", hi: "पटारिया मार्केट  |  इन्फिनिटी प्रा. लि." },
+  firms: { en: "Infinity Dog Ventures Pvt. Ltd.", hi: "इन्फिनिटी डॉग वेंचर्स प्रा. लि." },
 } as const;
 
 export const RSVP_FAMILY: Bi[] = [
@@ -168,8 +168,33 @@ export const RSVP_FAMILY: Bi[] = [
   { en: "Misthi Patariya", hi: "मिष्ठी पटारिया" },
 ];
 
-/** WhatsApp number (with country code) that receives RSVPs. */
-export const RSVP_WHATSAPP = "917770904258";
+export type DressCode = {
+  eventId: WeddingEvent["id"];
+  look: Bi;
+  /** Swatch colours shown beside the look. */
+  swatches: { name: string; hex: string }[];
+};
+
+/** Suggested attire per function, shown in the Dress Code section. */
+export const DRESS_CODES: DressCode[] = [
+  {
+    eventId: "haldi",
+    look: { en: "Kurta in shades of royal blue and powder blue", hi: "कुर्ता — रॉयल ब्लू और पाउडर ब्लू के रंगों में" },
+    swatches: [
+      { name: "Royal blue", hex: "#2B4FB3" },
+      { name: "Powder blue", hex: "#B3D1EA" },
+    ],
+  },
+  {
+    eventId: "sangeet",
+    look: { en: "Formal suit", hi: "फ़ॉर्मल सूट" },
+    swatches: [
+      { name: "Midnight navy", hex: "#1E2A45" },
+      { name: "Charcoal", hex: "#3B3B3F" },
+      { name: "Black", hex: "#141414" },
+    ],
+  },
+];
 
 export const SHLOK = {
   ganesh: "॥ श्री गणेशाय नमः ॥",
@@ -218,36 +243,13 @@ export const T = {
   blessingsBy: { en: "Blessings", hi: "आशीर्वाद" },
   awaitingYou: { en: "Awaiting your presence", hi: "दर्शनाभिलाषी" },
   welcomingYou: { en: "Eagerly welcoming you", hi: "स्वागतोत्सुक" },
-  firms: { en: "Firms", hi: "प्रतिष्ठान" },
+  firms: { en: "Firm", hi: "प्रतिष्ठान" },
   contact: { en: "Contact", hi: "संपर्क" },
-  rsvpTitle: { en: "Will you join us?", hi: "क्या आप आएँगे?" },
-  rsvpSub: {
-    en: "Let the family know who's coming and to which celebrations.",
-    hi: "कृपया बताइए कि आप कितने लोग और किन समारोहों में आएँगे।",
+  dressCode: { en: "Dress Code", hi: "परिधान" },
+  dressCodeSub: {
+    en: "A colour for each function, if you'd like a hint.",
+    hi: "हर समारोह के लिए रंग का एक सुझाव, यदि आप चाहें।",
   },
-  yourName: { en: "Your name", hi: "आपका नाम" },
-  namePlaceholder: { en: "e.g. Shreya Sharma", hi: "जैसे, श्रेया शर्मा" },
-  guests: { en: "Number of guests", hi: "कितने लोग" },
-  attending: { en: "Attending", hi: "किन समारोहों में" },
-  sendWhatsapp: { en: "Send on WhatsApp", hi: "व्हाट्सऐप पर भेजें" },
-  rsvpNote: {
-    en: "This opens WhatsApp with your reply written out. Nothing is sent until you press send.",
-    hi: "इससे व्हाट्सऐप में आपका उत्तर लिखा हुआ खुलेगा। भेजें दबाने तक कुछ नहीं जाएगा।",
-  },
-  nameRequired: { en: "Please enter your name", hi: "कृपया अपना नाम लिखें" },
   withLove: { en: "With love, the Patariya & Pakhariya families", hi: "सप्रेम, पटारिया एवं पखारिया परिवार" },
   music: { en: "Music", hi: "संगीत" },
 } satisfies Record<string, Bi>;
-
-export function rsvpMessage(
-  lang: Lang,
-  name: string,
-  guests: number,
-  eventIds: WeddingEvent["id"][],
-): string {
-  const names = EVENTS.filter((e) => eventIds.includes(e.id)).map((e) => e.name[lang]);
-  if (lang === "hi") {
-    return `नमस्ते! अनमोल एवं ईशा के विवाह के लिए उत्तर:\nनाम: ${name}\nकुल लोग: ${guests}\nसमारोह: ${names.join(", ") || "—"}`;
-  }
-  return `Namaste! RSVP for Anmol & Eesha's wedding:\nName: ${name}\nGuests: ${guests}\nAttending: ${names.join(", ") || "—"}`;
-}

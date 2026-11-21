@@ -9,3 +9,5 @@
 - [x] Add the uploaded Orika Club photo to the venue section
 - [x] Premium ornament pass on content (toran garland, mandalas, gold corner frames, bronze bands, medallion timeline, monogram seal) — opening left untouched
 - [x] Envelope opening video + poster in HD (AI upscale, same motion)
+- [x] Remove RSVP section; fix address (Behind Starbucks), firm name, Mandap at residence; remove date/venue lines from invitation card
+- [x] Dress code section (Haldi: royal/powder blue kurta; Sangeet: formal suit) with family illustration

@@ -1,5 +1,5 @@
 import ganesha from "@/assets/ganesha.webp";
-import { COUPLE, SHLOK, T, VENUE } from "@/lib/invite-content";
+import { COUPLE, SHLOK, T } from "@/lib/invite-content";
 import { Divider } from "./Divider";
 import { Reveal } from "./Reveal";
 import { useLang } from "./lang";
@@ -38,10 +38,6 @@ export function InvitationCard() {
               “{t(T.quote)}”
             </blockquote>
 
-            <p className="mt-6 text-xl text-foreground">{t(T.dateCaption)}</p>
-            <p className="mt-1 text-base text-muted-foreground">
-              {t(VENUE.name)}, {t(VENUE.city)}
-            </p>
           </div>
         </div>
       </Reveal>

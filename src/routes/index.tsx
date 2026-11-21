@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import song from "@/assets/wedding_song.mp3.asset.json";
 import { Countdown } from "@/components/invite/Countdown";
+import { DressCode } from "@/components/invite/DressCode";
 import { LangToggle, MusicButton } from "@/components/invite/Controls";
 import { Events } from "@/components/invite/Events";
 import { Families } from "@/components/invite/Families";
@@ -10,7 +11,6 @@ import { Hero } from "@/components/invite/Hero";
 import { InvitationCard } from "@/components/invite/InvitationCard";
 import { LangProvider, useLang } from "@/components/invite/lang";
 import { Opening } from "@/components/invite/Opening";
-import { Rsvp } from "@/components/invite/Rsvp";
 import { ScratchDate } from "@/components/invite/ScratchDate";
 import { Venue } from "@/components/invite/Venue";
 import { TapConfetti } from "@/components/invite/TapConfetti";
@@ -104,10 +104,10 @@ function Invitation() {
         <ScratchDate />
         <InvitationCard />
         <Events />
+        <DressCode />
         <Countdown />
         <Venue />
         <Families />
-        <Rsvp />
         <Footer />
       </main>
       {opened && <MusicButton playing={playing} onToggle={toggleMusic} />}

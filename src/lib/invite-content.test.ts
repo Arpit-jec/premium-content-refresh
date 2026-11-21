@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { CELEBRATION_START, EVENTS, eventStart, formatTime, timeLeft } from "./invite-content";
+import { CELEBRATION_START, DRESS_CODES, EVENTS, FROM, eventStart, formatTime, timeLeft } from "./invite-content";
 
 const byId = (id: string) => EVENTS.find((e) => e.id === id)!;
 
@@ -22,4 +22,17 @@ describe("wedding schedule", () => {
     const left = timeLeft(CELEBRATION_START, new Date("2026-11-29T18:30:00Z"));
     expect(left).toMatchObject({ days: 1, hours: 0, minutes: 0, seconds: 0, done: false });
   });
+  it("Mandap is at our residence", () => expect(byId("mandap").place.en).toBe("At our residence"));
+});
+
+describe("dress code", () => {
+  const look = (id: string) => DRESS_CODES.find((d) => d.eventId === id)?.look.en;
+  it("Haldi is kurta in royal blue and powder blue", () =>
+    expect(look("haldi")).toBe("Kurta in shades of royal blue and powder blue"));
+  it("Sangeet is a formal suit", () => expect(look("sangeet")).toBe("Formal suit"));
+});
+
+describe("host details", () => {
+  it("address says Behind Starbucks", () => expect(FROM.address.en).toContain("Behind Starbucks"));
+  it("firm is Infinity Dog Ventures Pvt. Ltd.", () => expect(FROM.firms.en).toBe("Infinity Dog Ventures Pvt. Ltd."));
 });

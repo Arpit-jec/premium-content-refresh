@@ -49,7 +49,7 @@ export function Families() {
             </Block>
 
             <Block label={t(T.firms)}>
-              <p className="whitespace-pre text-lg text-gold-deep">{t(FROM.firms)}</p>
+              <p className="text-lg text-gold-deep">{t(FROM.firms)}</p>
             </Block>
 
             <Block label={t(T.contact)}>
