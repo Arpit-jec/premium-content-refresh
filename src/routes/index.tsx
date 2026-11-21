@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import song from "@/assets/kudmayi_film_version.mp3.asset.json";
+import song from "@/assets/wedding_song.mp3.asset.json";
 import { Countdown } from "@/components/invite/Countdown";
 import { LangToggle, MusicButton } from "@/components/invite/Controls";
 import { Events } from "@/components/invite/Events";
