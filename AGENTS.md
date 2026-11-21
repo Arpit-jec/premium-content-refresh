@@ -28,3 +28,7 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+
+- The opening seal overlay (`.seal-anchor` / `.seal-wax` in `src/styles.css`) is aligned to the wax seal's pixel position in the 720×1280 envelope poster and film; if either is replaced, re-measure and update those numbers so the pressable seal still sits exactly on the filmed one.
