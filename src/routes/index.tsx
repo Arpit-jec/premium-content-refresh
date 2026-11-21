@@ -13,6 +13,7 @@ import { Opening } from "@/components/invite/Opening";
 import { Rsvp } from "@/components/invite/Rsvp";
 import { ScratchDate } from "@/components/invite/ScratchDate";
 import { Venue } from "@/components/invite/Venue";
+import { TapConfetti } from "@/components/invite/TapConfetti";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -78,6 +79,7 @@ function Invitation() {
     <>
       <audio ref={audioRef} src={song.url} loop preload="auto" />
       <LangToggle />
+      <TapConfetti />
       {!opened && (
         <Opening
           onOpenStart={startMusic}
