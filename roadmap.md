@@ -8,3 +8,4 @@
 - [x] Tactile seal press + smooth, eased seal-opening and graceful transition into the invitation
 - [x] Add the uploaded Orika Club photo to the venue section
 - [x] Premium ornament pass on content (toran garland, mandalas, gold corner frames, bronze bands, medallion timeline, monogram seal) — opening left untouched
+- [x] Envelope opening video + poster in HD (AI upscale, same motion)
