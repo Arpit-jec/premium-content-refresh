@@ -55,9 +55,18 @@ function Invitation() {
     const a = audioRef.current;
     if (!a) return;
     a.volume = 0.7;
+    a.muted = false;
     a.play().then(
       () => setPlaying(true),
-      () => setPlaying(false),
+      () => {
+        setPlaying(false);
+        // If the browser blocked it, try again on the very next tap.
+        window.addEventListener(
+          "pointerdown",
+          () => a.play().then(() => setPlaying(true), () => setPlaying(false)),
+          { once: true },
+        );
+      },
     );
   };
 
