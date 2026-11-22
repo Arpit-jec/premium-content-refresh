@@ -1,4 +1,4 @@
-import venuePhoto from "@/assets/venue-orika-photo.webp.asset.json";
+import venuePhoto from "@/assets/venue-orika-photo.webp";
 import { T, VENUE } from "@/lib/invite-content";
 import { OrnateFrame } from "./Ornaments";
 import { Reveal } from "./Reveal";
@@ -17,7 +17,7 @@ export function Venue() {
         <figure className="photo-mount p-2.5">
           <div className="relative overflow-hidden rounded-[0.6rem]">
             <img
-              src={venuePhoto.url}
+              src={venuePhoto}
               alt={`${VENUE.name.en} entrance`}
               loading="lazy"
               width={1400}
