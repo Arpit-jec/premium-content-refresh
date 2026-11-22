@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type CSSProperties } from "react";
-import envelopeVideo from "@/assets/envelope_opening_hd.mp4.asset.json";
+import envelopeVideo from "@/assets/envelope_opening_hd.mp4";
 import envelopePoster from "@/assets/envelope-poster.webp";
 import { COUPLE, T } from "@/lib/invite-content";
 import { Divider } from "./Divider";
