@@ -1,4 +1,4 @@
-import dressArt from "@/assets/dress_code_family.webp.asset.json";
+import dressArt from "@/assets/dress_code_family.webp";
 import { DRESS_CODES, EVENTS, T } from "@/lib/invite-content";
 import { OrnateFrame } from "./Ornaments";
 import { Reveal } from "./Reveal";
@@ -19,7 +19,7 @@ export function DressCode() {
       <Reveal>
         <figure className="photo-mount p-2.5">
           <img
-            src={dressArt.url}
+            src={dressArt}
             alt="Family members in pastel chikankari kurtas, sarees and sherwanis"
             loading="lazy"
             width={1080}
