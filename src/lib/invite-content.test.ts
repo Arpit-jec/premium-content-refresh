@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { CELEBRATION_START, DRESS_CODES, EVENTS, FROM, eventStart, formatTime, timeLeft } from "./invite-content";
+import { CELEBRATION_START, DRESS_CODES, EVENTS, FROM, RSVP_FAMILY, eventStart, formatTime, timeLeft } from "./invite-content";
 
 const byId = (id: string) => EVENTS.find((e) => e.id === id)!;
 
@@ -35,4 +35,11 @@ describe("dress code", () => {
 describe("host details", () => {
   it("address says Behind Starbucks", () => expect(FROM.address.en).toContain("Behind Starbucks"));
   it("firm is Infinity Dog Ventures Pvt. Ltd.", () => expect(FROM.firms.en).toBe("Infinity Dog Ventures Pvt. Ltd."));
+});
+
+describe("welcoming family", () => {
+  it("lists the loving stars line right after Rajveer", () => {
+    const names = RSVP_FAMILY.map((p) => p.en);
+    expect(names.slice(-2)).toEqual(["Rajveer Patariya", "Our loving stars: Misthi, Vaishnavi, Abhijeet"]);
+  });
 });

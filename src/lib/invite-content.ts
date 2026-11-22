@@ -164,8 +164,7 @@ export const RSVP_FAMILY: Bi[] = [
   { en: "Nirmala Patariya", hi: "निर्मला पटारिया" },
   { en: "Vikrant – Rakhi Patariya (Bhai-Bhabhi)", hi: "विक्रांत – राखी पटारिया (भाई-भाभी)" },
   { en: "Rajveer Patariya", hi: "राजवीर पटारिया" },
-  { en: "Vaishnavi Patariya", hi: "वैष्णवी पटारिया" },
-  { en: "Misthi Patariya", hi: "मिष्ठी पटारिया" },
+  { en: "Our loving stars: Misthi, Vaishnavi, Abhijeet", hi: "हमारे प्यारे सितारे: मिष्ठी, वैष्णवी, अभिजीत" },
 ];
 
 export type DressCode = {

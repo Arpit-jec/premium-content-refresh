@@ -165,7 +165,7 @@ export function Opening({
               <text className="seal-ring-text" fontSize="10.5" letterSpacing="3.2">
                 <textPath href="#seal-ring" startOffset="0" textLength="532" lengthAdjust="spacing">
                   {/* Latin on purpose: curved SVG text breaks Devanagari letter joining. */}
-                  {`${COUPLE.groom.first.en} ✦ ${COUPLE.bride.first.en} ✦ Shubh Vivah ✦ 1 · 12 · 2026 ✦ `}
+                  {`${COUPLE.groom.first.en} ✦ ${COUPLE.bride.first.en} ✦ Shubh Vivah ✦ 4 · 12 · 2026 ✦ `}
                 </textPath>
               </text>
             </svg>
