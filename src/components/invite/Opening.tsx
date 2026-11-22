@@ -144,7 +144,7 @@ export function Opening({
         >
           <video
             ref={videoRef}
-            src={envelopeVideo.url}
+            src={envelopeVideo}
             poster={envelopePoster}
             playsInline
             preload="auto"
