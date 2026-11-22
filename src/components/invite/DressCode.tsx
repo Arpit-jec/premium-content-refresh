@@ -11,7 +11,7 @@ export function DressCode() {
     <section className="px-5 py-20">
       <Reveal>
         <SectionHeading title={t(T.dressCode)} />
-        <p className="mx-auto -mt-2 mb-8 max-w-[16rem] text-center text-lg italic leading-snug text-foreground/80">
+        <p className="mx-auto -mt-2 mb-8 max-w-xs text-balance text-center text-lg italic leading-snug text-foreground/80">
           {t(T.dressCodeSub)}
         </p>
       </Reveal>
