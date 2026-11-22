@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import song from "@/assets/wedding_song.mp3.asset.json";
+import song from "@/assets/wedding_song.mp3";
 import { Countdown } from "@/components/invite/Countdown";
 import { DressCode } from "@/components/invite/DressCode";
 import { LangToggle, MusicButton } from "@/components/invite/Controls";
@@ -86,7 +86,7 @@ function Invitation() {
 
   return (
     <>
-      <audio ref={audioRef} src={song.url} loop preload="auto" />
+      <audio ref={audioRef} src={song} loop preload="auto" />
       <LangToggle />
       <TapConfetti />
       {!opened && (
