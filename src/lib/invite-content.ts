@@ -182,6 +182,7 @@ export const DRESS_CODES: DressCode[] = [
     look: { en: "Kurta in shades of royal blue and powder blue", hi: "कुर्ता — रॉयल ब्लू और पाउडर ब्लू के रंगों में" },
     swatches: [
       { name: "Royal blue", hex: "#2B4FB3" },
+      { name: "Soft royal blue", hex: "#7090D1" },
       { name: "Powder blue", hex: "#B3D1EA" },
     ],
   },
