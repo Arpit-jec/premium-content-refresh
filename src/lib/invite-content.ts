@@ -151,12 +151,13 @@ export const COUPLE = {
 } as const;
 
 export const FROM = {
-  name: { en: "Nirmal Patariya", hi: "निर्मल पटारिया" },
+  name: { en: "Nirmala Patariya", hi: "निर्मला पटारिया" },
   address: {
     en: "Rampur, Purana Sai Mandir, Behind Starbucks, Jabalpur (M.P.)",
     hi: "रामपुर, पुराना साईं मंदिर, स्टारबक्स के पीछे, जबलपुर (म.प्र.)",
   },
   phones: ["7770904258", "8319908973"],
+  market: { en: "Patariya Market", hi: "पटारिया मार्केट" },
   firms: { en: "Infinity Dog Ventures Pvt. Ltd.", hi: "इन्फिनिटी डॉग वेंचर्स प्रा. लि." },
 } as const;
 

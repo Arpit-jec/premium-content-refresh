@@ -49,7 +49,8 @@ export function Families() {
             </Block>
 
             <Block label={t(T.firms)}>
-              <p className="text-lg text-gold-deep">{t(FROM.firms)}</p>
+              <p className="text-lg text-gold-deep">{t(FROM.market)}</p>
+              <p className="mt-1 text-lg text-gold-deep">{t(FROM.firms)}</p>
             </Block>
 
             <Block label={t(T.contact)}>
